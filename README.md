@@ -6,10 +6,10 @@ Blog post [here](https://zoph.me/)
 
 ## Pre-requirements
 - Create Role: ecsExec Role (could be integrated in the IaC)
-- Create an artifacts bucket & remote state
+- Create an artefacts bucket & remote state
 - Get information of your AWS Account:
-    - vpc id used
-    - security group id used
+    - `vpc id` used
+    - `security group id` used
 
 ## Setup
 - Edit variables on `Makefile` accordingly
