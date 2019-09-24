@@ -1,23 +1,22 @@
-# Serverless jobs using AWS fargate
+# Serverless jobs using AWS Fargate
 
-Schedule serverless jobs using AWS Fargate - Example
+On this sample of Infrastructure as Code, we are using [Terraform](https://www.terraform.io/) to deploy infrastructure to schedule serverless jobs (bash) using AWS Fargate.
 
-Blog post [here](https://zoph.me)
+Blog post [here](https://zoph.me/)
 
 ## Pre-requirements
-- Create Role: ecsExec Role
-- Create Artifacts bucket & remote state
-- Edit variables on `Makefile` accordingly
-- Edit `Dockerfile` for your needs
-- Get information on your AWS Account:
-    - vpc id
-    - security group id
+- Create Role: ecsExec Role (could be integrated in the IaC)
+- Create an artifacts bucket & remote state
+- Get information of your AWS Account:
+    - vpc id used
+    - security group id used
 
 ## Usage
+- Edit variables on `Makefile` accordingly
 - Edit `variables.tf`
-- `make plan`
-- `make deploy`
-
+- Edit `Dockerfile` for your needs
+- Run `make plan`
+- Run `make deploy`
 
 ## Schema
 
