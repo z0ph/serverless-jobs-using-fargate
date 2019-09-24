@@ -64,3 +64,10 @@ variable "ecs_memory" {
   default     = "2048"
   description = "Container: Memory in MB"
 }
+
+variable "docker_image_arn" {
+  default     = "123456789012.dkr.ecr.xxxxx.amazonaws.com/xxxx:lastone"
+  description = "Arn of the Docker Image"
+}
+
+
