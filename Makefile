@@ -24,10 +24,10 @@ ECR := XXX # Example: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/{project_name
 ################################################
 
 build-docker:
-	aws ecr get-login --region $(AWS_REGION)
-	docker build -t fargate-image .
-	docker tag fargate-image:latest $(ECR)
-	docker push $(ECR)
+	@echo "run aws ecr get-login --region $(AWS_REGION) first"
+	@docker build -t fargate-image .
+	@docker tag fargate-image $(ECR)
+	@docker push $(ECR)
 
 ################ Terraform #####################
 plan:
