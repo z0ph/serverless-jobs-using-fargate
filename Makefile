@@ -4,6 +4,7 @@ help:
 	@echo "${PROJECT}"
 	@echo "${DESCRIPTION}"
 	@echo ""
+	@echo "	build-docker - Build and push docker image"
 	@echo "	plan - init, validate and plan (dry-run) IaC using Terraform"
 	@echo "	deploy - deploy the IaC using Terraform"
 	@echo "	destroy - delete all previously created infrastructure using Terraform"
@@ -19,10 +20,11 @@ DESCRIPTION ?= Schedule serverless jobs using AWS Fargate
 S3_BUCKET ?= zoph-lab-terraform-tfstate
 AWS_REGION ?= eu-west-1
 ENV ?= dev
-ECR := XXX
+ECR := XXX # Example: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/{project_name}-ecr-{env}
 ################################################
 
 build-docker:
+	aws ecr get-login --region $(AWS_REGION)
 	docker build -t fargate-image .
 	docker tag fargate-image:latest $(ECR)
 	docker push $(ECR)
