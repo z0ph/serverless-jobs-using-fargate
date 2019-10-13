@@ -15,7 +15,7 @@ Blog post [here](https://zoph.me/posts/2019-09-22-serverless-jobs-scheduling-usi
 
 - `git clone https://github.com/z0ph/serverless-jobs-using-fargate.git`
 - Prepare your Docker image (using `Dockerfile`)
-- Adapt the `[variables.tf](tf-fargate/variables.tf)`, and "Config" part in `Makefile` to your needs
+- Adapt the [`variables.tf`](tf-fargate/variables.tf), and "Config" part in [`Makefile`](Makefile) to your needs
 - Run `make plan`
 - Run `make deploy`
 - Run `make build-docker`
