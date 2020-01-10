@@ -3,5 +3,6 @@ resource "aws_ecr_repository" "ecr" {
   
   tags = {
     Project = "${var.project}"
+    Environment = "${var.env}"
   }
 }

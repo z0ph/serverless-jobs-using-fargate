@@ -33,16 +33,16 @@ variable "ecs_taskexec_role" {
   description = "IAM Role used for Task Execution"
 }
 
-variable "subnets" {
-  type        = list(string)
+variable "subnets_ids" {
+  type        = "list"
   default     = ["XXX"]
-  description = "Subnets used for Fargate Containers"
+  description = "Subnets IDs used for Fargate Containers"
 }
 
-variable "security_groups" {
-  type        = list(string)
+variable "security_groups_ids" {
+  type        = "list"
   default     = ["XXX"]
-  description = "Security Groups used for Fargate"
+  description = "Security Groups IDs used for Fargate"
 }
 
 variable "schedule" {
@@ -65,9 +65,9 @@ variable "ecs_memory" {
   description = "Container: Memory in MB"
 }
 
-variable "docker_image_arn" {
+variable "ecr_image_uri" {
   default     = "123456789012.dkr.ecr.xxxxx.amazonaws.com/xxxx:lastone"
-  description = "Arn of the Docker Image"
+  description = "URI of the Docker Image in ECR"
 }
 
 

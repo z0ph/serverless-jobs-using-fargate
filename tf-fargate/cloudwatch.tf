@@ -14,8 +14,8 @@ resource "aws_cloudwatch_event_target" "cw_event_target" {
       platform_version      = "LATEST"
       task_definition_arn   = "${aws_ecs_task_definition.task_definition.arn}"
       network_configuration {
-        subnets             = "${var.subnets}"
-        security_groups     = "${var.security_groups}"
+        subnets             = "${var.subnets_ids}"
+        security_groups     = "${var.security_groups_ids}"
         assign_public_ip    = "${var.assign_public_ip}"
       }
   }

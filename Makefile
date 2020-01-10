@@ -20,7 +20,7 @@ DESCRIPTION ?= Schedule serverless jobs using AWS Fargate
 S3_BUCKET ?= zoph-lab-terraform-tfstate
 AWS_REGION ?= eu-west-1
 ENV ?= dev
-ECR := XXX # Example: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/{project_name}-ecr-{env}
+ECR := XXX # ECR Repository Example: 123456789012.dkr.ecr.eu-west-1.amazonaws.com/{project_name}-ecr-{env}
 ################################################
 
 build-docker:
