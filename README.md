@@ -6,7 +6,7 @@ Blog post [here](https://zoph.me/posts/2019-09-22-serverless-jobs-scheduling-usi
 
 ## Requirements
 
-- Create an artifacts bucket
+- Create an artifacts bucket: `make artifacts`
 - Setup [Terraform S3 remote state](https://www.terraform.io/docs/backends/index.html)
 
 ## Usage
@@ -16,9 +16,9 @@ Blog post [here](https://zoph.me/posts/2019-09-22-serverless-jobs-scheduling-usi
 - `git clone https://github.com/z0ph/serverless-jobs-using-fargate.git`
 - Prepare your Docker image (using `Dockerfile`)
 - Adapt the [`variables.tf`](tf-fargate/variables.tf), and "Config" part in [`Makefile`](Makefile) to your needs
-- Run `make plan`
-- Run `make deploy`
 - Run `make build-docker`
+- Prepare deployment using `make init`, `make validate`, `make plan`
+- Run `make apply`
 - Take a nap, enjoy :cocktail:
 
 ### Destroy
