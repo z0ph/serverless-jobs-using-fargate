@@ -5,7 +5,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/${name}-fargate-task-definition",
+          "awslogs-group": "/ecs/${project}-fargate-task-definition",
           "awslogs-region": "${aws_region}",
           "awslogs-stream-prefix": "ecs"
         }
@@ -27,7 +27,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "${docker_image_arn}",
+      "image": "${ecr_image_uri}",
       "startTimeout": null,
       "dependsOn": null,
       "disableNetworking": null,
@@ -43,6 +43,6 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "${name}"
+      "name": "${project}"
     }
 ]

@@ -44,14 +44,10 @@ plan:
 		-var="description=$(DESCRIPTION)" \
 		-var="aws_region=$(AWS_REGION)" \
 		-var="artifacts_bucket=$(S3_BUCKET)" \
-		-state="$(PROJECT)-$(ENV)-$(AWS_REGION).tfstate" \
-		-out="$(PROJECT)-$(ENV)-$(AWS_REGION).tfplan" \
 		./tf-fargate/
 
 deploy:
-	terraform apply \
-		-state="$(PROJECT)-$(ENV)-$(AWS_REGION).tfstate" \
-			$(PROJECT)-$(ENV)-$(AWS_REGION).tfplan
+	terraform apply ./tf-fargate/
 
 destroy:
 	@read -p "Are you sure that you want to destroy: '$(PROJECT)-$(ENV)-$(AWS_REGION)'? [yes/N]: " sure && [ $${sure:-N} = 'yes' ]

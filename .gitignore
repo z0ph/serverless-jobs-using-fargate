@@ -8,4 +8,5 @@
 # .tfvars files
 *.tfvars
 
-.vscode
+.vscode/
+.idea/

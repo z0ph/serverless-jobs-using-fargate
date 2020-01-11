@@ -40,7 +40,7 @@ resource "aws_iam_role" "ecs_events_role" {
 
 resource "aws_iam_role_policy_attachment" "ecs_events_role_policy" {
   policy_arn = "${data.aws_iam_policy.ecs_events_policy.arn}"
-  role   = "${aws_iam_role.ecs_events_role.id}"
+  role       = "${aws_iam_role.ecs_events_role.id}"
 }
 
 data "aws_iam_policy" "ecs_events_policy" {
