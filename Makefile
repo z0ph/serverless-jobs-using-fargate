@@ -65,11 +65,15 @@ plan:
 		./tf-fargate/
 
 apply:
-	@terraform apply -compact-warnings ./tf-fargate/
+	@terraform apply \
+		-var="env=$(ENV)" \
+		-var="project=$(PROJECT)" \
+		-var="description=$(DESCRIPTION)" \
+		-compact-warnings ./tf-fargate/
 
 destroy:
 	@read -p "Are you sure that you want to destroy: '$(PROJECT)-$(ENV)-$(AWS_REGION)'? [yes/N]: " sure && [ $${sure:-N} = 'yes' ]
-	terraform destroy ./tf-fargate/
+	@terraform destroy ./tf-fargate/
 
 clean:
 	@rm -fr build/
